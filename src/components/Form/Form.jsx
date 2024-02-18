@@ -13,21 +13,8 @@ class Form extends Component {
   };
   handlerSubmit = evt => {
     evt.preventDefault();
-
-    const result = this.props.contacts.find(
-      ({ name }) => name.toLowerCase() === this.state.name.toLowerCase()
-    );
-    if (!result) {
-      const contact = {
-        id: nanoid(),
-        name: this.state.name,
-        number: this.state.number,
-      };
-      this.props.addContact(contact);
-      this.setState({ name: '', number: '' });
-    } else {
-      return alert(`${this.state.name} is already in contacts`);
-    }
+    this.props.addContact(this.state);
+    this.setState({ name: '', number: '' });
   };
   render() {
     return (
