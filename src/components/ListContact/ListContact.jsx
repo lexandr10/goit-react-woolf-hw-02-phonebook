@@ -5,7 +5,7 @@ class ListContact extends Component {
   render() {
     return (
       <ul className={css.items}>
-        {this.props.onFilter().map(({ id, name, number }) => (
+        {this.props.productFilter.map(({ id, name, number }) => (
           <li className={css.list} key={id}>
             <div>
               <p className={css.text}>Name: {name}</p>
